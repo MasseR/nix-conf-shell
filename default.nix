@@ -106,18 +106,22 @@ in
     # scripts
     meeting
   ];
+  programs.urxvt = {
+    enable = true;
+    fonts = [ "xft:Iosevka\\ Term:size=11" ];
+    iso14755 = false;
+    scroll = {
+      bar.enable = false;
+      lines = 4000;
+      keepPosition = true;
+    };
+    extraConfig = {
+      "pointerBlank" = true;
+      "perl-ext-common" = "default,matcher,searchable-scrollback";
+    };
+  };
   xresources = {
     properties = {
-      "URxvt*iso14755" = false;
-      "URxvt.font" = "xft:Iosevka\\ Term:size=11";
-      # "URxvt.matcher.button" = 1;
-      "URxvt.perl-ext-common" = "default,matcher,searchable-scrollback";
-      "URxvt.pointerBlank" = true;
-      "URxvt.saveLines" = 4000;
-      "URxvt.scrollBar" = false;
-      "URxvt.scrollWithBuffer" = true;
-      "URxvt.secondaryScroll" = true;
-      # "urxvt.urlLauncher" = "${pkgs.qutebrowser}/bin/qutebrowser";
       "Xcursor.theme" = "oxy-white";
       "Xft*antialias" = true;
       "Xft*dpi" = 96;
