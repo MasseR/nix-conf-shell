@@ -123,6 +123,10 @@ prompt_wunjo_setup() {
         host=$(echo $SSH_CLIENT | cut -f1 -d " ")
         PROMPT+="$pc[remote]($host)$pc[reset]"
     fi
+    # Add indication if nix shell
+    if [ ! -e $IN_NIX_SHELL ]; then
+        PROMPT+="$pc[nix]($IN_NIX_SHELL)$pc[reset]"
+    fi
     if [ $verbose ]; then
         PROMPT+="$pc[host]%m$pc[reset] "
     fi
