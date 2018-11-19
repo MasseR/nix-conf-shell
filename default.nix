@@ -96,7 +96,7 @@ in
       if [ ! -f $HOME/.reminders ]; then
         touch $HOME/.reminders
       fi
-      ${pkgs.remind}/bin/remind -m -c+ ~/.reminders
+      # ${pkgs.remind}/bin/remind -m -c+ ~/.reminders
     '';
   };
   home.packages = with pkgs; [
