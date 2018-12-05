@@ -56,8 +56,8 @@ in
       PATH = "$HOME/.local/bin:$PATH";
     };
     history = {
-      save = 10000;
-      size = 10200;
+      save = 100000;
+      size = 102000;
       ignoreDups = false;
       expireDuplicatesFirst = true;
       extended = true;
