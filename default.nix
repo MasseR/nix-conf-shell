@@ -36,6 +36,10 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = {
+      "nix-build" = "nix build";
+      "nix--build" = "${pkgs.nix}/bin/nix-build";
+      "nix-shell" = "echo use nix run instead or nix--shell";
+      "nix--shell" = "${pkgs.nix}/bin/nix-shell";
       mkae = "make";
       mutt = "${pkgs.neomutt}/bin/neomutt";
       ls = "ls -N --color=auto";
