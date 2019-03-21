@@ -43,11 +43,11 @@ in
       # Taken from https://askubuntu.com/a/789472
       noise = "${pkgs.sox}/bin/play -n synth brownnoise synth pinknoise mix synth sine amod 0.2 10";
       # https://theptrk.com/2018/07/11/did-txt-file/
-      did = ''${pkgs.nvim}/bin/nvim +"normal Go" +"r!date" ~/did.txt'';
+      did = ''${pkgs.myVim}/bin/vim +"normal Go" +"r!date" ~/did.txt'';
     };
     enableAutosuggestions = true;
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "vim";
       PAGER = "less";
       PATH = "$HOME/.local/bin:$PATH";
     };
@@ -97,7 +97,7 @@ in
   };
   home.packages = with pkgs; [
     shell
-    nvim
+    myVim
 
     # scripts
     meeting
