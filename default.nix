@@ -95,7 +95,6 @@ in
   };
   home.packages = with pkgs; [
     shell
-    myVim
   ];
   programs.urxvt = {
     enable = true;
