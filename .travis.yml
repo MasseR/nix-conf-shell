@@ -1,0 +1,17 @@
+language: nix
+
+before_script:
+  - mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
+  - mkdir -p ~/.config/nixpkgs
+
+os:
+  - linux
+
+env:
+  - CHANNEL=18.09
+  - CHANNEL=19.03
+  - CHANNEL=unstable
+
+
+script:
+  nix build -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixos-$CHANNEL.tar.gz -I home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz -f "<home-manager/home-manager/home-manager.nix>" --argstr confPath "$PWD/test.nix" --argstr confAttr ""
