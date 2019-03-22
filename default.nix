@@ -96,9 +96,6 @@ in
   home.packages = with pkgs; [
     shell
     myVim
-
-    # scripts
-    meeting
   ];
   programs.urxvt = {
     enable = true;
