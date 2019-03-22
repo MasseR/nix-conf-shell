@@ -45,7 +45,7 @@ in
     };
     enableAutosuggestions = true;
     sessionVariables = {
-      EDITOR = "nvim";
+      EDITOR = "vim";
       PAGER = "less";
       PATH = "$HOME/.local/bin:$PATH";
     };
@@ -95,7 +95,7 @@ in
   };
   home.packages = with pkgs; [
     shell
-    nvim
+    myVim
 
     # scripts
     meeting
