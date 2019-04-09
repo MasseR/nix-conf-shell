@@ -45,7 +45,7 @@ in
     };
     enableAutosuggestions = true;
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "${pkgs.myVim}/bin/vim";
       PAGER = "less";
       PATH = "$HOME/.local/bin:$PATH";
     };
