@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{config, pkgs, ...}:
 
 let
   meeting = pkgs.writeScriptBin "meeting" (builtins.readFile ./scripts/meeting.sh);
@@ -98,7 +98,7 @@ in
   ];
   programs.urxvt = {
     enable = true;
-    fonts = [ "xft:Iosevka\\ Term:size=11" ];
+    fonts = [ "xft:${config.fonts.name}:size=${toString config.fonts.size}" ];
     iso14755 = false;
     scroll = {
       bar.enable = false;
@@ -118,7 +118,7 @@ in
       "Xft*hinting" = true;
       "Xft*hintstyle" = "hintfull";
       "Xft*rgba" = "rgb";
-      "dzen2.font" = "xft:Iosevka:pixelsize=13";
+      "dzen2.font" = "xft:${config.fonts.name}:pixelsize=${toString (config.fonts.size + 2)}";
     };
     extraConfig = builtins.readFile ./Xresources;
   };
