@@ -86,11 +86,6 @@ in
       bindkey -M vicmd v edit-command-line
 
       setopt prompt_sp # print lines without newlines properly
-
-      if [ ! -f $HOME/.reminders ]; then
-        touch $HOME/.reminders
-      fi
-      ${pkgs.remind}/bin/remind -m -c+ ~/.reminders
     '';
   };
   home.packages = with pkgs; [
